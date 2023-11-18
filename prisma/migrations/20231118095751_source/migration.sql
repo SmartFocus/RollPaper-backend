@@ -1,0 +1,16 @@
+-- CreateTable
+CREATE TABLE `Image` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `url` VARCHAR(255) NOT NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+    `likes` INTEGER NOT NULL DEFAULT 0,
+    `dislikes` INTEGER NOT NULL DEFAULT 0,
+    `description` VARCHAR(191) NOT NULL,
+    `thumbnail` VARCHAR(255) NOT NULL,
+    `bonus` INTEGER NOT NULL DEFAULT 0,
+    `tags` VARCHAR(191) NOT NULL,
+    `reported` BOOLEAN NOT NULL DEFAULT false,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
