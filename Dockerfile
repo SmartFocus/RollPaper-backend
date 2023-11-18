@@ -10,6 +10,9 @@ COPY package*.json ./
 # 安装应用依赖
 RUN npm install
 
+# 执行npm run build
+RUN npm run build
+
 # 复制应用源代码
 COPY . .
 
