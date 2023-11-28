@@ -20,4 +20,26 @@ export class ImageService {
     console.log(randomImage);
     return randomImage;
   }
+
+  async switchImageLikeCount(id: number, count: number) {
+    // update db
+    // 获取原来的likes count
+    const image = await prisma.image.findUnique({
+      where: {
+        id,
+      },
+    });
+    console.log(image);
+    // 更新likes count
+
+    const updatedImage = await prisma.image.update({
+      where: {
+        id,
+      },
+      data: {
+        likes: image.likes + count,
+      },
+    });
+    return updatedImage;
+  }
 }
