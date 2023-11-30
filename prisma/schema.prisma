@@ -23,3 +23,14 @@ model Image {
   tags        String
   reported    Boolean  @default(false)
 }
+
+
+model User {
+  id              Int      @id @default(autoincrement())
+  openid          String   @unique
+  createdAt       DateTime @default(now())
+  remainRollCount Int      @default(0)
+  lastLoginTime   DateTime @default(now())
+  totalRollCount  Int      @default(0)
+  totalLikeCount  Int      @default(0)
+}
